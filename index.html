@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>To-Do List</title>
+    <script
+      src="https://kit.fontawesome.com/f30fac2c61.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="resetstylesheet" href="reset.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do App</h1>
+      <h2>Let's Do it!</h2>
+      <div class="inputs">
+        <input type="text" placeholder="Enter Your Task" id="inp" />
+        <input type="text" placeholder="Enter Task Description" id="desc" />
+        <button id="adder">+</button>
+      </div>
+      <div class="taskslist">
+        <div class="hpdiv">
+          <h3 class="highpriority">High Priority</h3>
+          <ul class="hptasks"></ul>
+        </div>
+        <div class="mpdiv">
+          <h3 class="midpriority">Medium Priority</h3>
+          <ul class="mptasks"></ul>
+        </div>
+        <div class="lpdiv">
+          <h3 class="lowpriority">Low Priority</h3>
+          <ul class="lptasks"></ul>
+        </div>
+        <div class="donediv">
+          <h3 class="donetask">Done</h3>
+          <ul class="done"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="dialog" class="dialog">
+      <div class="dialog-content">
+        <span>Select a prority:</span>
+        <select id="dropdown">
+          <option value="highpriopt">High Priority</option>
+          <option value="midpriopt">Medium Priority</option>
+          <option value="lowpriopt">Low Priority</option>
+          <option value="donepriopt">Done</option>
+        </select>
+        <button id="doneDialog">Choose</button>
+        <button id="closeDialog">Close</button>
+      </div>
+    </div>
+    <script>
+      const openDialogButton = document.getElementById("adder");
+      const dialog = document.getElementById("dialog");
+      const closeDialogButton = document.getElementById("closeDialog");
+
+      openDialogButton.addEventListener("click", () => {
+        dialog.style.display = "block";
+      });
+
+      closeDialogButton.addEventListener("click", () => {
+        dialog.style.display = "none";
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
